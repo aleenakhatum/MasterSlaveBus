@@ -8,7 +8,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aleen/Documents/College/Fa
 INFO: [VRFC 10-311] analyzing module cmu
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aleen/Documents/College/Fall2025/VLSI/MasterSlaveBus/MasterSlaveBus/MasterSlaveBus.srcs/sources_1/new/master.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module master
-WARNING: [VRFC 10-3594] non-net port 'dataBus' cannot be of mode inout [C:/Users/aleen/Documents/College/Fall2025/VLSI/MasterSlaveBus/MasterSlaveBus/MasterSlaveBus.srcs/sources_1/new/master.v:57]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aleen/Documents/College/Fall2025/VLSI/MasterSlaveBus/MasterSlaveBus/MasterSlaveBus.srcs/sources_1/new/memory.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module memory
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aleen/Documents/College/Fall2025/VLSI/MasterSlaveBus/MasterSlaveBus/MasterSlaveBus.srcs/sources_1/new/slave.v" into library xil_defaultlib
@@ -20,6 +19,8 @@ INFO: [VRFC 10-311] analyzing module top
 WARNING: [VRFC 10-2938] 'ack_o_s' is already implicitly declared on line 53 [C:/Users/aleen/Documents/College/Fall2025/VLSI/MasterSlaveBus/MasterSlaveBus/MasterSlaveBus.srcs/sources_1/new/top.v:74]
 WARNING: [VRFC 10-2938] 'dat_o_s' is already implicitly declared on line 52 [C:/Users/aleen/Documents/College/Fall2025/VLSI/MasterSlaveBus/MasterSlaveBus/MasterSlaveBus.srcs/sources_1/new/top.v:75]
 WARNING: [VRFC 10-2938] 'clear_o' is already implicitly declared on line 42 [C:/Users/aleen/Documents/College/Fall2025/VLSI/MasterSlaveBus/MasterSlaveBus/MasterSlaveBus.srcs/sources_1/new/top.v:104]
+WARNING: [VRFC 10-2938] 'SSPTXINTR' is already implicitly declared on line 109 [C:/Users/aleen/Documents/College/Fall2025/VLSI/MasterSlaveBus/MasterSlaveBus/MasterSlaveBus.srcs/sources_1/new/top.v:128]
+WARNING: [VRFC 10-2938] 'SSPRXINTR' is already implicitly declared on line 109 [C:/Users/aleen/Documents/College/Fall2025/VLSI/MasterSlaveBus/MasterSlaveBus/MasterSlaveBus.srcs/sources_1/new/top.v:129]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aleen/Documents/College/Fall2025/VLSI/MasterSlaveBus/MasterSlaveBus/MasterSlaveBus.srcs/sources_1/imports/new/tx_rx_logic.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tx_rx_logic
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aleen/Documents/College/Fall2025/VLSI/MasterSlaveBus/MasterSlaveBus/MasterSlaveBus.srcs/sim_1/new/tb_top.v" into library xil_defaultlib

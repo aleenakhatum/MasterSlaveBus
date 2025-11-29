@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="13.333 ns"></ZoomStartTime>
-      <ZoomEndTime time="609.334 ns"></ZoomEndTime>
-      <Cursor1Time time="129.333 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="586.001 ns"></ZoomEndTime>
+      <Cursor1Time time="199.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="160"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <NameColumnWidth column_width="166"></NameColumnWidth>
+      <ValueColumnWidth column_width="76"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="19" />
+   <WVObjectSize size="38" />
    <wvobject fp_name="/tb_top/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
@@ -52,48 +52,124 @@
       <obj_property name="ElementShortName">read_data[31:0]</obj_property>
       <obj_property name="ObjectShortName">read_data[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut/u_master/memoryRead" type="logic">
-      <obj_property name="ElementShortName">memoryRead</obj_property>
-      <obj_property name="ObjectShortName">memoryRead</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/uut/u_master/memoryWrite" type="logic">
-      <obj_property name="ElementShortName">memoryWrite</obj_property>
-      <obj_property name="ObjectShortName">memoryWrite</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/uut/u_master/dat_i" type="array">
+   <wvobject fp_name="/tb_top/uut/u_slave/dat_i" type="array">
       <obj_property name="ElementShortName">dat_i[31:0]</obj_property>
       <obj_property name="ObjectShortName">dat_i[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut/u_master/ack_i" type="logic">
-      <obj_property name="ElementShortName">ack_i</obj_property>
-      <obj_property name="ObjectShortName">ack_i</obj_property>
+   <wvobject fp_name="/tb_top/uut/u_slave/adr_i" type="array">
+      <obj_property name="ElementShortName">adr_i[25:0]</obj_property>
+      <obj_property name="ObjectShortName">adr_i[25:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut/u_master/dat_o" type="array">
+   <wvobject fp_name="/tb_top/uut/u_slave/we_i" type="logic">
+      <obj_property name="ElementShortName">we_i</obj_property>
+      <obj_property name="ObjectShortName">we_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_slave/stb_i" type="logic">
+      <obj_property name="ElementShortName">stb_i</obj_property>
+      <obj_property name="ObjectShortName">stb_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_slave/cyc_i" type="logic">
+      <obj_property name="ElementShortName">cyc_i</obj_property>
+      <obj_property name="ObjectShortName">cyc_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_slave/mem_adr_o" type="array">
+      <obj_property name="ElementShortName">mem_adr_o[25:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_adr_o[25:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_slave/dat_o" type="array">
       <obj_property name="ElementShortName">dat_o[31:0]</obj_property>
       <obj_property name="ObjectShortName">dat_o[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut/u_master/we_o" type="logic">
-      <obj_property name="ElementShortName">we_o</obj_property>
-      <obj_property name="ObjectShortName">we_o</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/uut/u_master/stb_o" type="logic">
-      <obj_property name="ElementShortName">stb_o</obj_property>
-      <obj_property name="ObjectShortName">stb_o</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/uut/u_master/cyc_o" type="logic">
-      <obj_property name="ElementShortName">cyc_o</obj_property>
-      <obj_property name="ObjectShortName">cyc_o</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/uut/u_master/dataBus" type="array">
+   <wvobject fp_name="/tb_top/uut/u_slave/dataBus" type="array">
       <obj_property name="ElementShortName">dataBus[31:0]</obj_property>
       <obj_property name="ObjectShortName">dataBus[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut/u_master/state" type="array">
-      <obj_property name="ElementShortName">state[1:0]</obj_property>
-      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   <wvobject fp_name="/tb_top/uut/u_memory/dataBus" type="array">
+      <obj_property name="ElementShortName">dataBus[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataBus[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut/u_master/next_state" type="array">
-      <obj_property name="ElementShortName">next_state[1:0]</obj_property>
-      <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+   <wvobject fp_name="/tb_top/uut/u_memory/addressBus" type="array">
+      <obj_property name="ElementShortName">addressBus[25:0]</obj_property>
+      <obj_property name="ObjectShortName">addressBus[25:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_memory/r" type="logic">
+      <obj_property name="ElementShortName">r</obj_property>
+      <obj_property name="ObjectShortName">r</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_memory/w" type="logic">
+      <obj_property name="ElementShortName">w</obj_property>
+      <obj_property name="ObjectShortName">w</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_memory/phi1" type="logic">
+      <obj_property name="ElementShortName">phi1</obj_property>
+      <obj_property name="ObjectShortName">phi1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_memory/phi2" type="logic">
+      <obj_property name="ElementShortName">phi2</obj_property>
+      <obj_property name="ObjectShortName">phi2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_memory/wordAddress" type="array">
+      <obj_property name="ElementShortName">wordAddress[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wordAddress[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_memory/value" type="array">
+      <obj_property name="ElementShortName">value[31:0]</obj_property>
+      <obj_property name="ObjectShortName">value[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_memory/dataBus" type="array">
+      <obj_property name="ElementShortName">dataBus[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataBus[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_ssp/PWDATA" type="array">
+      <obj_property name="ElementShortName">PWDATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">PWDATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_ssp/PRDATA" type="array">
+      <obj_property name="ElementShortName">PRDATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">PRDATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_slave/dataBus" type="array">
+      <obj_property name="ElementShortName">dataBus[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataBus[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_slave/we_i" type="logic">
+      <obj_property name="ElementShortName">we_i</obj_property>
+      <obj_property name="ObjectShortName">we_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_slave/is_ssp" type="logic">
+      <obj_property name="ElementShortName">is_ssp</obj_property>
+      <obj_property name="ObjectShortName">is_ssp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_cmu/count" type="array">
+      <obj_property name="ElementShortName">count[1:0]</obj_property>
+      <obj_property name="ObjectShortName">count[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_cmu/stall" type="logic">
+      <obj_property name="ElementShortName">stall</obj_property>
+      <obj_property name="ObjectShortName">stall</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/SSPTXINTR" type="logic">
+      <obj_property name="ElementShortName">SSPTXINTR</obj_property>
+      <obj_property name="ObjectShortName">SSPTXINTR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_ssp/u_RxFIFO/PRDATA" type="array">
+      <obj_property name="ElementShortName">PRDATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">PRDATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_ssp/u_RxFIFO/PSEL" type="logic">
+      <obj_property name="ElementShortName">PSEL</obj_property>
+      <obj_property name="ObjectShortName">PSEL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_ssp/u_RxFIFO/rx_read" type="logic">
+      <obj_property name="ElementShortName">rx_read</obj_property>
+      <obj_property name="ObjectShortName">rx_read</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/u_memory/r" type="logic">
+      <obj_property name="ElementShortName">r</obj_property>
+      <obj_property name="ObjectShortName">r</obj_property>
    </wvobject>
 </wave_config>

@@ -49,20 +49,20 @@ module slave(
     inout wire [31:0] dataBus
     );
     
-    assign mem_adr_o = adr_i;
-    assign dataBus = (we_i) ? dat_i : 32'bz; 
-    assign dat_o = dataBus;
-    assign ack_o = (stb_i == 1 && cyc_i == 1) ? 1'b1 : 1'b0;
-    
     // SSP select
     wire is_ssp = (adr_i == 26'h0010001) || (adr_i == 26'h0010000);
     wire w = (adr_i == 26'h0010000);
     wire r = (adr_i == 26'h0010001);
     wire master_transmit = (stb_i == 1 && cyc_i == 1);
     
+    assign mem_adr_o = adr_i;
+    assign dataBus = (we_i) ? dat_i : ((is_ssp) ? {24'b0, 8'bz} : 32'bz); 
+    assign dat_o = dataBus;
+    assign ack_o = (stb_i == 1 && cyc_i == 1) ? 1'b1 : 1'b0;
+    
     //Access SSP
     assign ssp_sel_o = is_ssp && master_transmit ? 1'b1 : 1'b0;
-    assign ssp_w_o = w & !r ? 1'b1 : 1'b0;
+    assign ssp_w_o = (w && ~r) ? 1'b1 : 1'b0;
     
     //Access Mem
     assign mem_r_o = !is_ssp && master_transmit && !we_i ? 1'b1 : 1'b0;

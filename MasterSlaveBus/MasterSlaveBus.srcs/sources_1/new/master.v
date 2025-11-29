@@ -54,7 +54,7 @@ module master(
     output wire tagn_o,
     
     //Bidirectional 
-    inout reg [31:0] dataBus
+    inout wire [31:0] dataBus
     );
     
     //Internal variables
@@ -68,6 +68,7 @@ module master(
     //Read 
     assign adr_o = addressBus;
     assign dat_o = dataBus;
+    assign dataBus = (memoryRead && mem_req) ? 32'bz : dataBus;
     assign tagn_o = 1'b0;
     always @(posedge clk_i or posedge rst_i) begin
         if (rst_i) begin
@@ -94,10 +95,10 @@ module master(
                  next_state = WAIT; // always go to WAIT next cycle
                 
                 if (memoryRead == 1) begin
-                    we_o <= 1'b1;
+                    we_o <= 1'b0;
                 end
                 else if (memoryWrite == 1) begin
-                    we_o <= 1'b0;
+                    we_o <= 1'b1;
                 end                
             end
 
@@ -114,9 +115,9 @@ module master(
             end
 
             DONE: begin
-                if (memoryRead == 1) begin
-                    dataBus <= dat_i;
-                end
+                //if (memoryRead == 1) begin
+                //    dataBus <= dat_i;
+                //end
 
                 next_state = IDLE;
                 stb_o <= 1'b0;
@@ -130,6 +131,4 @@ module master(
             end
         endcase
     end
-    
-    
 endmodule

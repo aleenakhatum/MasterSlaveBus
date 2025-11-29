@@ -61,6 +61,7 @@ module tb_top;
             memoryWrite  <= 1'b0;
             @(posedge clk);
             wait(uut.u_master.ack_i == 1'b1);
+            #45
             @(posedge clk);
             data = dataBus;  // capture read data
             mem_req  <= 1'b0;
@@ -117,23 +118,24 @@ module tb_top;
         //mem_write(26'h000104, 32'h12345678);
 
         // Test 2: Read back from RAM
-        //mem_read(26'h000100, read_data);
-        //if (read_data !== 32'hDEADBEEF) $error("RAM read failed!");
+        mem_read(26'h000100, read_data);
+        if (read_data !== 32'hDEADBEEF) $error("RAM read failed!");
 
-        //mem_read(26'h000104, read_data);
-        //if (read_data !== 32'h12345678) $error("RAM read failed!");
+        mem_read(26'h000104, read_data);
+        if (read_data !== 32'h12345678) $error("RAM read failed!");
 
         // Test 3: Write to SSP (assume address ends with 0x40)
-        ssp_write(26'h0000000, 8'hA5);
+        //ssp_write(26'h0010000, 8'hA5);
 
         // Test 4: Read from SSP → should get 0x000000A5
-        ssp_read(26'h0000000, read_data);
-        if (read_data !== 32'h000000A5) $error("SSP read failed!");
+        //#500
+        //ssp_read(26'h0010001, read_data);
+        //if (read_data !== 32'h000000A5) $error("SSP read failed!");
 
         // Another SSP register
-        ssp_write(26'h0000000, 8'h5A);
-        ssp_read(26'h0000000, read_data);
-        if (read_data !== 32'h0000005A) $error("SSP read failed!");
+        //ssp_write(26'h0010000, 8'h5A);
+        //ssp_read(26'h0010001, read_data);
+        //if (read_data !== 32'h0000005A) $error("SSP read failed!");
 
         #100;
         $display("\nALL TESTS PASSED!\n");

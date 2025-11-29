@@ -33,6 +33,10 @@ module TxFIFO (
             rptr <= 2'd0;
             count <= 3'd0;
             read_new <= 0;
+            fifo[3] <= 8'd0;
+            fifo[2] <= 8'd0;
+            fifo[1] <= 8'd0;
+            fifo[0] <= 8'd0;
         end
         else begin
             read_new <= tx_read;

@@ -31,8 +31,8 @@ module top(
       output SSPOE_B
     );
     
-    wire dat_o_m;
-    wire adr_o_m;
+    wire [31:0] dat_o_m;
+    wire [25:0] adr_o_m;
     wire we_o_m;
     wire stb_o_m;
     wire cyc_o_m;
@@ -55,7 +55,7 @@ module top(
     
         //Output
         .adr_o(adr_o_m), 
-        .dat_o(data_o_m), 
+        .dat_o(dat_o_m), 
         .we_o(we_o_m), 
         .stb_o(stb_o_m), 
         .cyc_o(cyc_o_m),
@@ -65,14 +65,14 @@ module top(
         .dataBus(dataBus)
     );
     
-    wire mem_adr_o_s;
-    wire dataBus_s;
+    wire [25:0] mem_adr_o_s;
+    wire [31:0] dataBus_s;
     wire mem_r_o_s;
     wire mem_w_o_s;
     wire ssp_sel_o_s;
     wire ssp_w_o_s; 
     wire ack_o_s;   
-    wire dat_o_s;
+    wire [31:0] dat_o_s;
     
     slave u_slave(
         .rst_i(clear_o), 
@@ -106,7 +106,7 @@ module top(
     cmu u_cmu(
         .clear_i(reset),
         .clk_i(clk),
-        .ssp_intr_i(),
+        .ssp_intr_i({SSPTXINTR,SSPRXINTR}),
         .phi1(phi1),
         .phi2(phi2),
         .clk_o(pclk),
@@ -133,11 +133,11 @@ module top(
         .CLEAR_B(~clear_o), 
         .PSEL(ssp_sel_o_s),
         .PWRITE(ssp_w_o_s),
-        .PWDATA(dataBus_s),
+        .PWDATA(dataBus_s[7:0]),
         .SSPCLKIN(SSPCLKIN_OUT),
         .SSPFSSIN(SSPFSSIN_OUT),
         .SSPRXD(SSPTXD_RXD),
-        .PRDATA(dataBus_s),
+        .PRDATA(dataBus_s[7:0]),
         .SSPTXINTR(SSPTXINTR),
         .SSPRXINTR(SSPRXINTR),
         .SSPOE_B(SSPOE_B),

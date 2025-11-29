@@ -21,7 +21,7 @@ module RxFIFO (
     
     assign full = (count == 4);
     assign empty = (count == 0);
-    assign PRDATA = fifo[rptr];
+    assign PRDATA = (PSEL && rx_read) ? fifo[rptr]: 8'hz;
     reg read_new;
     wire read_rising;
     reg write_new;
@@ -37,6 +37,10 @@ module RxFIFO (
             rptr <= 2'd0;
             count <= 3'd0;
             read_new <= 0;
+            fifo[3] <= 8'd0;
+            fifo[2] <= 8'd0;
+            fifo[1] <= 8'd0;
+            fifo[0] <= 8'd0;
         end
         else begin
             read_new <= rx_read;
